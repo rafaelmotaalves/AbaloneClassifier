@@ -17,3 +17,12 @@ Uso de Rede Neural para resolver o problema da base de dados abalone
 ```shell
   python mlp-model.py entrada,com,atributos,separados,por,virgula
 ```
+
+# EM
+
+```
+* Para testar uma entrada no modelo
+
+```shell
+  python em-model.py entrada,com,atributos,separados,por,virgula
+```
