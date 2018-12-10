@@ -1,8 +1,7 @@
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import cross_val_score
-import numpy as np
 
-file = open("abalone_formatted.csv")
+file = open("../abalone_formatted.csv")
 
 dataarray = file.readlines()
 
@@ -29,10 +28,11 @@ for line in dataarray:
 # Configuração do classficador
 mlp = MLPClassifier(
     solver='lbfgs',
-    learning_rate_init=0.00001
+    learning_rate_init=0.00001,
 )
 
-mlp.fit(inputData, classData)
 
-for c in mlp.coefs_:
-   print(list(c))
+# Não foi possível otimizar a accuracy regulando a quantidade de neurons
+# O melhor algoritmo de ativação foi relu
+scores = cross_val_score(mlp, inputData, classData, cv=10)
+print("Accuracy: %0.4f (+/- %0.2f)" % (scores.mean(), scores.std() ** 2))
