@@ -1,4 +1,4 @@
-# MLP Abalone
+# AbaloneClassifier
 Uso de Rede Neural para resolver o problema da base de dados abalone
 
 * Para testar a acurácia do modelo no banco
